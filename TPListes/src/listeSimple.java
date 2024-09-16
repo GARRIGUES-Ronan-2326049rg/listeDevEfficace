@@ -35,6 +35,22 @@ public class listeSimple {
 		return node;
 	}
 	
+	public void inverser() {	
+	 	Node temporaire1 = null;
+	 	Node temporaire2 = null;
+	    Node pointeur = head;
+	    
+
+	    while (pointeur != null) {
+	        temporaire2 = pointeur.getNext(); 
+	        pointeur.setNext(temporaire1);
+	        temporaire1 = pointeur;
+	        pointeur = temporaire2;
+	    }
+	    
+	    head = temporaire1;
+	}
+	
 	public String toString() {
 		Node node = head;
 		String result = "[" + head.toString();
@@ -52,12 +68,11 @@ public class listeSimple {
 		listeSimple liste = new listeSimple();
 		liste.addBegin(1);
 		liste.addBegin(2);
-		System.out.println(liste.avantDernier());
 		liste.addBegin(3);
-		liste.addBegin(4);
 		System.out.println(liste.avantDernier());
-		liste.addBegin(5);
-		System.out.println(liste.avantDernier());
+		System.out.println(liste.toString());
+		System.out.println("-------");
+		liste.inverser();
 		System.out.println(liste.toString());
 		}
 	
