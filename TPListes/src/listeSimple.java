@@ -51,6 +51,30 @@ public class listeSimple {
 	    head = temporaire1;
 	}
 	
+	
+	public void echanger(Node x, Node y) {
+		Node xTemp = null;
+		Node yTemp = null;
+		Node parcours = head;
+	    
+	    while (xTemp != x || yTemp != y && parcours.getNext() != null ) {
+	    	
+	    	if ( parcours.equals(x)) {
+	    		xTemp = x;
+	    		if (!(yTemp == null)) {
+	    			parcours = yTemp;
+	    		}
+	    	}
+	    	else if (parcours.equals(y)) {
+	    		yTemp = y;
+	    		if (!(xTemp == null)) {
+	    			parcours = xTemp;
+	    		}
+	    	}
+	    }
+	    
+	}
+	
 	public String toString() {
 		Node node = head;
 		String result = "[" + head.toString();
@@ -71,8 +95,11 @@ public class listeSimple {
 		liste.addBegin(3);
 		System.out.println(liste.avantDernier());
 		System.out.println(liste.toString());
-		System.out.println("-------");
 		liste.inverser();
+		System.out.println(liste.toString());
+		liste.addBegin(4);
+		System.out.println(liste.toString());
+		liste.echanger(new Node(2,null), new Node(4,null));
 		System.out.println(liste.toString());
 		}
 	
