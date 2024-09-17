@@ -57,7 +57,7 @@ public class listeSimple {
 		Node yTemp = null;
 		Node parcours = head;
 	    
-	    while (xTemp != x || yTemp != y && parcours.getNext() != null ) {
+	    while ((xTemp != x || yTemp != y) && parcours.getNext() != null ) {
 	    	
 	    	if ( parcours.equals(x)) {
 	    		xTemp = x;
@@ -71,7 +71,9 @@ public class listeSimple {
 	    			parcours = xTemp;
 	    		}
 	    	}
+	    	parcours = parcours.getNext();
 	    }
+	    
 	    
 	}
 	
@@ -99,7 +101,7 @@ public class listeSimple {
 		System.out.println(liste.toString());
 		liste.addBegin(4);
 		System.out.println(liste.toString());
-		liste.echanger(new Node(2,null), new Node(4,null));
+		liste.echanger(new Node(3,null), new Node(4,null));
 		System.out.println(liste.toString());
 		}
 	
