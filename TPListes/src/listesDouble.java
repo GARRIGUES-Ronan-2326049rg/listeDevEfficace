@@ -45,6 +45,13 @@ public class listesDouble {
         return compteur;
     }
 	
+	public boolean equals(listesDouble liste) {
+        if(liste.getHeader().equals(this.header) && liste.getTrailer().equals(this.trailer)
+                && liste.getSize() == this.size) {
+        }
+        return false;
+    }
+    
 
 	
 	public static void main(String[] args) {
