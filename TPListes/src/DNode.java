@@ -1,19 +1,19 @@
 
 public class DNode{
-	private String element;
+	private int element;
 	private DNode next, prev;
 
-	public DNode(String e, DNode p, DNode n){
+	public DNode(int e, DNode p, DNode n){
 			setElement(e);
 			setPrev(p);
 			setNext(n);
 		}
 
-	public String getElement() {
+	public int getElement() {
 		return element;
 	}
 
-	public void setElement(String element) {
+	public void setElement(int element) {
 		this.element = element;
 	}
 
